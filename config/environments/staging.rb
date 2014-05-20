@@ -97,19 +97,19 @@ ActionMailer::Base.smtp_settings = {
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
   require "omniauth-facebook"
-  config.omniauth :facebook, FACEBOOK_APP_ID, FACEBOOK_APP_SECRET,
+  config.omniauth :facebook, Setting.facebook_app_id , Setting.facebook_app_secret ,
                   {:scope => 'email', :client_options => {:ssl => {:ca_file => '/usr/lib/ssl/certs/ca-certificates.crt'}}}
 
   require "omniauth-google-oauth2"
-  config.omniauth :google_oauth2, GOOGLE_APP_ID, GOOGLE_APP_SECRET, {access_type: "offline", approval_prompt: ""}
+  config.omniauth :google_oauth2, Setting.google_app_id , Setting.google_app_secret, {access_type: "offline", approval_prompt: ""}
 
   require "omniauth-twitter"
-  config.omniauth :twitter, TWITTER_APP_ID, TWITTER_APP_SECRET
+  config.omniauth :twitter, Setting.twitter_app_id , Setting.twitter_app_secret
 
   require "omniauth-meetup"
-  config.omniauth :meetup, MEETUP_APP_ID, MEETUP_APP_SECRET
+  config.omniauth :meetup, Setting.meetup_app_id, Setting.meetup_app_secret
 
   require "omniauth-linkedin"
-  config.omniauth :linkedin, LINKEDIN_APP_ID, LINKEDIN_APP_SECRET
+  config.omniauth :linkedin, Setting.linkedin_app_id, Setting.linkedin_app_secret
 
 end

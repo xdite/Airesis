@@ -1,0 +1,22 @@
+defaults: &defaults
+  facebook_app_id: 
+  facebook_app_secret:
+  google_app_id:
+  google_app_secret:
+  twitter_app_id:
+  twitter_app_secret:
+  meetup_app_id:
+  meetup_app_secret:
+  linkedin_app_id:
+  linkedin_app_secret:
+  parma_app_id:
+  parma_app_secret:
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+ 

@@ -762,7 +762,7 @@ p.rank, p.problem, p.subtitle, p.problems, p.objectives, p.show_comment_authors
       message.subject = subject
       client = Jabber::Client.new Jabber::JID.new(id)
       client.connect
-      client.auth_sasl(Jabber::SASL::XFacebookPlatform.new(client, FACEBOOK_APP_ID, current_user.authentications.find_by_provider(Authentication::FACEBOOK).token, FACEBOOK_APP_SECRET), nil)
+      client.auth_sasl(Jabber::SASL::XFacebookPlatform.new(client, Setting.facebook_app_id, current_user.authentications.find_by_provider(Authentication::FACEBOOK).token, Setting.facebook_app_secret ), nil)
       client.send message
       client.close
     end
