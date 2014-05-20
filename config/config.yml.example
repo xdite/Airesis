@@ -13,6 +13,7 @@ defaults: &defaults
   parma_app_secret:
   app_short_name: "Airesis"
   app_long_name: "Airesis - Scegli di partecipare"
+  app_email_address: "info@airesis.it"
 development:
   <<: *defaults
 

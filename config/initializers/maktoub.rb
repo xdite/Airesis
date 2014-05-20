@@ -5,4 +5,4 @@ Maktoub.google_plus_url = NEWSLETTER_GOOGLEPLUS_URL # your facebook oage
 Maktoub.subscription_preferences_url = NEWSLETTER_PREFERENCES_URL #subscribers management url
 Maktoub.logo = "logo120.png" # path to your logo asset
 Maktoub.home_domain = NEWSLETTER_HOME_URL # your domain
-Maktoub.app_name = APP_LONG_NAME # your app name
+Maktoub.app_name = Setting.app_long_name # your app name

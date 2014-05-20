@@ -117,7 +117,7 @@ namespace :airesis do
         end
 
 
-        #f.puts("@u = User.create(user_type_id: 1, name: 'Administrator', surname: 'Admin', email: \"#{APP_EMAIL_ADDRESS}\", login: 'admin', confirmed_at: Time.now)")
+        #f.puts("@u = User.create(user_type_id: 1, name: 'Administrator', surname: 'Admin', email: \"#{Setting.app_email_address}\", login: 'admin', confirmed_at: Time.now)")
 
       end
     end
