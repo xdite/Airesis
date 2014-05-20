@@ -14,6 +14,13 @@ defaults: &defaults
   app_short_name: "Airesis"
   app_long_name: "Airesis - Scegli di partecipare"
   app_email_address: "info@airesis.it"
+  newsletter:
+     from_address: "Newsletter <newsletter@testairesis.com>"
+     twitter_url: "http://twitter.com/#!/democracyo"
+     facebook_url: "https://www.facebook.com/democracyonline"
+     google_plus_url: "https://plus.google.com/b/108270340723482080584/108270340723482080584"
+     preferences_url :"http://www.airesis.it/users/alarm_preferences"
+     home_url: "www.airesis.it"
 development:
   <<: *defaults
 
