@@ -122,8 +122,6 @@ GEM
       http_parser.rb (>= 0.6.0)
     em-socksify (0.3.0)
       eventmachine (>= 1.0.0.beta.4)
-    email_preview (1.5.5)
-      rails (>= 3.0)
     email_reply_parser (0.5.5)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -178,7 +176,10 @@ GEM
       addressable
       faraday
       multi_json
-    libv8 (3.3.10.4)
+    launchy (2.4.2)
+      addressable (~> 2.3)
+    letter_opener (1.2.0)
+      launchy (~> 2.2)
     listen (2.4.0)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -349,8 +350,6 @@ GEM
       sunspot (= 2.0.0)
     sunspot_solr (2.0.0)
     test-unit (2.5.5)
-    therubyracer (0.10.1)
-      libv8 (~> 3.3.10)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -398,7 +397,6 @@ DEPENDENCIES
   devise (= 2.0.4)
   devise_traceable!
   el_finder
-  email_preview
   email_reply_parser
   exception_notification (= 2.6.1)
   foreigner
@@ -412,6 +410,7 @@ DEPENDENCIES
   jquery-rjs!
   kaminari (~> 0.14.1)
   koala (~> 1.8.0rc1)
+  letter_opener
   mailman
   maktoub!
   nickname_generator
@@ -445,7 +444,6 @@ DEPENDENCIES
   sunspot_rails (= 2.0.0)
   sunspot_solr (= 2.0.0)
   test-unit
-  therubyracer (= 0.10.1)
   thin
   timezone!
   turnout

@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-gem 'therubyracer', '0.10.1'
 
 gem 'maktoub', :git => 'https://github.com/coorasse/maktoub.git'
 
@@ -65,7 +64,7 @@ gem 'sitemap_generator'
 
 gem 'geocoder'
 
-gem 'email_preview'
+gem "letter_opener", :group => :development
 
 gem 'seed_dump'
 
