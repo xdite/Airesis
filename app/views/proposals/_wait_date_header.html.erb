@@ -20,7 +20,7 @@
         <% if @group %>
             <b><%= t('pages.proposals.show.create_votation_period') %></b>
         <% else %>
-            <b><%= raw t('pages.proposals.show.no_periods_contact_admin', :email => (mail_to EMAIL_USERNAME)) %></b>
+            <b><%= raw t('pages.proposals.show.no_periods_contact_admin', :email => (mail_to Setting.email.username )) %></b>
         <% end %>
     <% end %>
     <% if @group && (can? :create_date, @group) %>

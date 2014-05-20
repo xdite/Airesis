@@ -38,11 +38,13 @@ Airesis::Application.configure do
   #config.assets.logger = nil
   config.force_ssl = false
   
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = { :host => MAILER_DEFAULT_HOST }
   
+  config.action_mailer.default_url_options               = {
+    :host => Setting.domain.sub("http://", "")
+  }
   
   config.quiet_assets = true
   
@@ -79,17 +81,6 @@ Airesis::Application.configure do
 end
 
 
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address            => EMAIL_ADDRESS,
-    :port               => 587,
-    :authentication     => :plain,
-    :user_name          => EMAIL_USERNAME,
-    :password           => EMAIL_PASSWORD
-}
 
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.

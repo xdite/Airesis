@@ -34,10 +34,21 @@ Airesis::Application.configure do
 # with SQLite, MySQL, and PostgreSQL)
   config.active_record.auto_explain_threshold_in_seconds = 0.4
 
-  config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default_url_options = {:host => 'airesistest.alwaysdata.net'}
+
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :mailgun
+  config.action_mailer.mailgun_settings = {
+    :api_key  => Setting.mailgun.api_key,
+    :api_host => Setting.mailgun.api_host
+  }
+
+  config.action_mailer.default_url_options               = {
+    :host => Setting.domain.sub("http://", "")
+  }
+
   config.action_mailer.logger = nil
 
   config.logger = Logger.new(Rails.root.join("log", Rails.env + ".log"), 50, 100.megabytes)
@@ -81,17 +92,7 @@ Airesis::Application.configure do
 end
 
 ActionMailer::Base.default :from => "AiresisTest <info@airesis.it>"
-ActionMailer::Base.delivery_method = :smtp
-ActionMailer::Base.perform_deliveries = true
-ActionMailer::Base.raise_delivery_errors = true
-ActionMailer::Base.smtp_settings = {
-    :enable_starttls_auto => true,
-    :address => EMAIL_ADDRESS,
-    :port => 587,
-    :authentication => :plain,
-    :user_name => EMAIL_USERNAME,
-    :password => EMAIL_PASSWORD
-}
+
 
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.

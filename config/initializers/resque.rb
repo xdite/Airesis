@@ -13,7 +13,7 @@ Resque::Failure::Multiple.configure do |config|
 end
 
 Resque::Failure::Notifier2.configure do |config|
-  config.smtp = {:address => EMAIL_ADDRESS, :port => 587, :user => EMAIL_USERNAME,:secret => EMAIL_PASSWORD}
-  config.sender =  ERROR_SENDER
-  config.recipients = [ERROR_RECEIVER]
+  config.smtp = {:address => Setting.email.address , :port => 587, :user => Setting.email.username ,:secret => Setting.email.password }
+  config.sender =  Setting.error.sender
+  config.recipients = [Setting.error.receiver]
 end
