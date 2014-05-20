@@ -1,7 +1,7 @@
 class Roadmap
   include HTTParty
 
-  base_uri BUGTRACKING_URL
+  base_uri Setting.bugtracking.url
 
 
 

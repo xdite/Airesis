@@ -125,7 +125,7 @@ class HomeController < ApplicationController
 
   private
   def initialize_roadmap
-    @roadmap ||= Roadmap.new(BUGTRACKING_USERNAME,BUGTRACKING_PASSWORD)
+    @roadmap ||= Roadmap.new( Setting.bugtracking.username , Setting.bugtracking.password)
   end
 
   private
