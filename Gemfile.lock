@@ -326,6 +326,7 @@ GEM
     select2-rails (3.4.3)
       sass-rails
       thor (~> 0.14)
+    settingslogic (2.0.9)
     simple_form (1.5.0)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -438,6 +439,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   seed_dump
   select2-rails (= 3.4.3)
+  settingslogic
   simple_form (= 1.5.0)
   sitemap_generator
   sunspot-queue

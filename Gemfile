@@ -23,6 +23,8 @@ group :development do
   gem "better_errors"
 end
 
+gem "settingslogic"
+
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
