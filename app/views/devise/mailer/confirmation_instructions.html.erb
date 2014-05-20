@@ -1,8 +1,5 @@
-<% @host = @resource.original_locale.host %>
-<% @subdomain = @resource.subdomain %>
-<% if @subdomain %>
-    <% @host = [@subdomain, @host.gsub('www', '')].join %>
-<% end %>
+<% @host = Setting.domain %>
+
 <% @url = user_confirmation_url(:confirmation_token => @resource.confirmation_token, :host => @host, l: @resource.original_locale.lang) %>
 
 <p><%= t('devise.mailer.confirmation_instructions.welcome', {app_name: Setting.app_short_name , user: @resource.fullname}) %></p>

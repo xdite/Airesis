@@ -17,6 +17,7 @@ defaults: &defaults
   app_email_address: "info@airesis.it"
   maps_api_key:
   geospatial_name:
+  default_locale: zh
   newsletter:
      from_address: "Newsletter <newsletter@testairesis.com>"
      twitter_url: "http://twitter.com/#!/democracyo"

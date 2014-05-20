@@ -57,6 +57,6 @@ class Configuration < ActiveRecord::Base
   end
 
   def self.recaptcha
-    @rotp = !self.find_by_name(RECAPTCHA).value.to_i.zero?
+    Setting.recaptcha.public_key.present? &&  Setting.recaptcha.private_key.present?
   end
 end

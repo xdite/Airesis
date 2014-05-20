@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   #l'utente deve aver fatto login
   before_filter :authenticate_user!, :only => [:show]
 
-  before_filter :initialize_roadmap, :only => [:bugtracking]
+#  before_filter :initialize_roadmap, :only => [:bugtracking]
 
   def index
     redirect_to home_url if current_user

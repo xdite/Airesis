@@ -308,17 +308,17 @@ class ApplicationController < ActionController::Base
     flash.discard if request.xhr?
   end
 
-  unless Rails.application.config.consider_all_requests_local
-    rescue_from Exception, :with => :render_error
-    rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-    rescue_from ActionController::RoutingError, :with => :render_404
-    rescue_from ActionController::UnknownController, :with => :render_404
-    rescue_from ::AbstractController::ActionNotFound, :with => :render_404
-  end
-
-  rescue_from CanCan::AccessDenied do |exception|
-    permissions_denied(exception)
-  end
+  # unless Rails.application.config.consider_all_requests_local
+  #   rescue_from Exception, :with => :render_error
+  #   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  #   rescue_from ActionController::RoutingError, :with => :render_404
+  #   rescue_from ActionController::UnknownController, :with => :render_404
+  #   rescue_from ::AbstractController::ActionNotFound, :with => :render_404
+  # end
+# 
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   permissions_denied(exception)
+  # end
 
   #check as rode all the alerts of the page.
   #it's a generic method but with a per-page solution

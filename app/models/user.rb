@@ -161,8 +161,12 @@ class User < ActiveRecord::Base
   #dopo aver creato un nuovo utente gli assegno il primo tutorial e
   #disattivo le notifiche standard
   def assign_tutorials
-    Tutorial.all.each do |tutorial|
-      assign_tutorial(self, tutorial)
+    begin
+      Tutorial.all.each do |tutorial|
+        assign_tutorial(self, tutorial)
+      end
+    rescue
+      # FIXME for registration
     end
     self.blocked_alerts.create(:notification_type_id => 20)
     self.blocked_alerts.create(:notification_type_id => 21)
@@ -234,7 +238,7 @@ class User < ActiveRecord::Base
     super.tap do |user|
       user.last_sign_in_ip = session[:remote_ip]
       user.subdomain = session[:subdomain] if (session[:subdomain] && !session[:subdomain].blank?)
-      user.original_sys_locale_id =user.sys_locale_id = SysLocale.find_by_key(I18n.locale).id
+      user.original_sys_locale_id = user.sys_locale_id = SysLocale.find_by_key(Setting.default_locale).id
 
       fdata = session["devise.google_data"] || session["devise.facebook_data"] || session["devise.linkedin_data"] || session['devise.parma_data']
       data = fdata["extra"]["raw_info"] || fdata["info"] if fdata #raw-info for google and facebook and linkedin, info for parma
