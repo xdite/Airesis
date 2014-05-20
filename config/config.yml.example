@@ -1,4 +1,5 @@
 defaults: &defaults
+  domain:
   facebook_app_id: 
   facebook_app_secret:
   google_app_id:
@@ -14,6 +15,7 @@ defaults: &defaults
   app_short_name: "Airesis"
   app_long_name: "Airesis - Scegli di partecipare"
   app_email_address: "info@airesis.it"
+  maps_api_key:
   newsletter:
      from_address: "Newsletter <newsletter@testairesis.com>"
      twitter_url: "http://twitter.com/#!/democracyo"
@@ -21,12 +23,26 @@ defaults: &defaults
      google_plus_url: "https://plus.google.com/b/108270340723482080584/108270340723482080584"
      preferences_url :"http://www.airesis.it/users/alarm_preferences"
      home_url: "www.airesis.it"
+  bugtracking:
+    url:
+    username:
+    password:
+  error:
+    sender: "coorasse+notifier@gmail.com"
+    receiver: "coorasse+exceptions@gmail.com"
+  email:
+    address:
+    username:
+    password:
+  recaptcha:
+    public_key:
+    private_key:
 development:
   <<: *defaults
 
 test:
   <<: *defaults
-
+staging:
+  <<: *defaults
 production:
   <<: *defaults
- 
