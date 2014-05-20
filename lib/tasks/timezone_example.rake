@@ -13,7 +13,7 @@ namespace :airesis do
         @latlon = [@search[0].latitude, @search[0].longitude]
         puts "Your coordinates: #{@latlon}"
         Timezone::Configure.begin do |c|
-          c.username = GEOSPATIAL_NAME
+          c.username = Setting.geospatial_name
         end
         @zone = Timezone::Zone.new :latlon => @latlon
         puts 'Your Timezone is: ' + @zone.active_support_time_zone
