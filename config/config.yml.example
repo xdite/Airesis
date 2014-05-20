@@ -1,5 +1,5 @@
 defaults: &defaults
-  domain:
+  domain: "airesis.dev"
   facebook_app_id: 
   facebook_app_secret:
   google_app_id:
@@ -21,7 +21,7 @@ defaults: &defaults
      twitter_url: "http://twitter.com/#!/democracyo"
      facebook_url: "https://www.facebook.com/democracyonline"
      google_plus_url: "https://plus.google.com/b/108270340723482080584/108270340723482080584"
-     preferences_url :"http://www.airesis.it/users/alarm_preferences"
+     preferences_url: "http://www.airesis.it/users/alarm_preferences"
      home_url: "www.airesis.it"
   bugtracking:
     url:
@@ -42,7 +42,6 @@ development:
 
 test:
   <<: *defaults
-staging:
-  <<: *defaults
+
 production:
   <<: *defaults
