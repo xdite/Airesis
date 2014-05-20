@@ -11,6 +11,7 @@ defaults: &defaults
   linkedin_app_secret:
   parma_app_id:
   parma_app_secret:
+  app_short_name: "Airesis"
 development:
   <<: *defaults
 
