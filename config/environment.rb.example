@@ -12,7 +12,7 @@ RECAPTCHA_PRIVATE=""
 GEOSPATIAL_NAME=""
 
 
-APP_LONG_NAME = "Airesis - Scegli di partecipare"
+
 APP_EMAIL_ADDRESS = "info@airesis.it"
 
 

@@ -9,7 +9,7 @@
 <% content_for :menu do %>
     <div id="menu-group" class="title-area">
       <div class="topimage hide-for-small">
-        <%= @group ? (@group.group_image_tag 60) : (image_tag 'logo120.png', :width => 60, :alt => APP_LONG_NAME) %>
+        <%= @group ? (@group.group_image_tag 60) : (image_tag 'logo120.png', :width => 60, :alt => Setting.app_long_name ) %>
 
       </div>
       <div class="topmenu">

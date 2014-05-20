@@ -12,6 +12,7 @@ defaults: &defaults
   parma_app_id:
   parma_app_secret:
   app_short_name: "Airesis"
+  app_long_name: "Airesis - Scegli di partecipare"
 development:
   <<: *defaults
 
