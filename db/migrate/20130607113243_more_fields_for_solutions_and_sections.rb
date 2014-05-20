@@ -1,7 +1,7 @@
 class MoreFieldsForSolutionsAndSections < ActiveRecord::Migration
   def up
     add_column :solutions, :title, :string, limit: 255
-    add_column :sections, :question, :string, limit: 20000
+    add_column :sections, :question, :text
   end
 
   def down

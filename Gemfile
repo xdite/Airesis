@@ -14,7 +14,7 @@ group :assets do
   gem 'zurb-foundation'
 end
 
-gem 'pg'
+gem "mysql2"
 
 gem 'sunspot_rails', '2.0.0'
 
@@ -125,6 +125,5 @@ gem 'mailman', require: false
 
 gem 'email_reply_parser'
 
-gem 'activerecord-postgres-array'
 
 gem 'paper_trail', '~> 2.7.2'

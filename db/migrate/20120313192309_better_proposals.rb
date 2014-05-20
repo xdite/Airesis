@@ -1,14 +1,14 @@
 class BetterProposals < ActiveRecord::Migration
   def up
-    add_column :proposals, :problem, :string, :limit => 20000
+    add_column :proposals, :problem, :text
     add_column :users, :banned, :boolean, :null => false, :default => false
     #genera la tabella per memorizzare la history della proposta
     create_table :proposal_histories do |h|
       h.integer :proposal_id, :null => false
       h.integer :user_id, :null => false #utente che effettua la modifica
       #t.integer :index
-      h.string :content, :limit => 20000, :null => false
-      h.string :problem, :limit => 20000
+      h.text :content, :null => false
+      h.text :problem
       h.integer :valutations, :null => false
       h.integer :rank, :null => false
       h.timestamps

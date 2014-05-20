@@ -870,8 +870,8 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
   create_table "proposal_histories", :force => true do |t|
     t.integer  "proposal_id",                  :null => false
     t.integer  "user_id",                      :null => false
-    t.string   "content",     :limit => 20000, :null => false
-    t.string   "problem",     :limit => 20000
+    t.text   "content",     :null => false
+    t.text   "problem"
     t.integer  "valutations",                  :null => false
     t.integer  "rank",                         :null => false
     t.datetime "created_at"
@@ -1000,17 +1000,17 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
     t.integer  "proposal_state_id"
     t.integer  "proposal_category_id",                       :default => 5,     :null => false
     t.string   "title",                     :limit => 200,                      :null => false
-    t.string   "content",                   :limit => 20000
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "valutations",                                :default => 0
     t.integer  "vote_period_id"
     t.integer  "proposal_comments_count",                    :default => 0
     t.integer  "rank",                                       :default => 0,     :null => false
-    t.string   "problem",                   :limit => 20000
+    t.text   "problem"
     t.string   "subtitle",                                   :default => "",    :null => false
-    t.string   "problems",                  :limit => 18000, :default => "",    :null => false
-    t.string   "objectives",                :limit => 18000, :default => "",    :null => false
+    t.text   "problems", :default => "",    :null => false
+    t.text   "objectives", :default => "",    :null => false
     t.boolean  "show_comment_authors",                       :default => true,  :null => false
     t.boolean  "private",                                    :default => false, :null => false
     t.integer  "quorum_id"
@@ -1185,7 +1185,7 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
   create_table "sections", :force => true do |t|
     t.string  "title",    :limit => 100,   :null => false
     t.integer "seq",                       :null => false
-    t.string  "question", :limit => 20000
+    t.text  "question"
   end
 
   create_table "sent_feedbacks", :force => true do |t|
@@ -1472,7 +1472,7 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
     t.text   "short_name"
   end
 
-  add_index "user_types", ["short_name"], :name => "srt_name_unq", :unique => true
+
 
   create_table "user_votes", :force => true do |t|
     t.integer  "proposal_id"
@@ -1747,7 +1747,7 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
   add_foreign_key "proposal_tags", "proposals", name: "proposal_tags_proposal_id_fk"
   add_foreign_key "proposal_tags", "tags", name: "proposal_tags_tag_id_fk"
 
-  add_foreign_key "proposal_votes", "proposals", name: "proposal_votes_proposal_id_fk"
+#  add_foreign_key "proposal_votes", "proposals", name: "proposal_votes_proposal_id_fk"
 
   add_foreign_key "proposals", "events", name: "proposals_vote_event_id_fk", column: "vote_event_id"
   add_foreign_key "proposals", "events", name: "proposals_vote_period_id_fk", column: "vote_period_id"
@@ -1820,6 +1820,6 @@ ActiveRecord::Schema.define(:version => 20140226212835) do
   add_foreign_key "user_votes", "vote_types", name: "user_votes_vote_type_id_fk"
 
   add_foreign_key "users", "images", name: "users_image_id_fk"
-  add_foreign_key "users", "user_types", name: "users_user_type_id_fk"
+
 
 end
